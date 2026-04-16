@@ -8,12 +8,12 @@ research = research_agent(skeptic)
 final = corrector_agent(research, gen, skeptic)
 
 print("\n" + "="*50)
-print("🤖 TRUTHGUARD AI SYSTEM")
+print(" TRUTHGUARD AI SYSTEM")
 print("="*50)
 
-print("\n🧠 Generator:\n", gen)
-print("\n🕵️ Skeptic:\n", skeptic)
-print("\n🔍 Research:\n", research)
-print("\n✅ Final Answer:\n", final)
+print("\n Generator:\n", gen)
+print("\n Skeptic:\n", skeptic)
+print("\n Research:\n", research)
+print("\n Final Answer:\n", final)
 
 print("\n" + "="*50)
