@@ -15,7 +15,7 @@ client = Groq(api_key=api_key)
 MODEL = "llama-3.1-8b-instant"
 
 
-# 🧠 Generator Agent
+#  Generator Agent
 def generator_agent(question):
     try:
         response = client.chat.completions.create(
@@ -27,10 +27,10 @@ def generator_agent(question):
         return response.choices[0].message.content
     except Exception as e:
         print("Generator Error:", e)
-        return f"❌ Fallback Answer: {question}"
+        return f" Fallback Answer: {question}"
 
 
-# 🕵️ Skeptic Agent
+#  Skeptic Agent
 def skeptic_agent(answer):
     try:
         response = client.chat.completions.create(
@@ -45,7 +45,7 @@ def skeptic_agent(answer):
         return "🕵️ Skeptic: Needs verification."
 
 
-# 🔍 Research Agent
+#  Research Agent
 def research_agent(skeptic_output):
     try:
         response = client.chat.completions.create(
@@ -60,7 +60,7 @@ def research_agent(skeptic_output):
         return "📚 Research: Unable to fetch data."
 
 
-# 🤖 Corrector Agent
+#  Corrector Agent
 def corrector_agent(research_data, original_answer, skeptic_output):
     try:
         response = client.chat.completions.create(
@@ -79,11 +79,11 @@ Give:
 """}
             ]
         )
-        return "🤖 Final Decision:\n" + response.choices[0].message.content
+        return " Final Decision:\n" + response.choices[0].message.content
 
     except Exception as e:
         print("Corrector Error:", e)
-        return f"""🤖 Final Decision (Fallback):
+        return f""" Final Decision (Fallback):
 
 Final Answer:
 {research_data}
